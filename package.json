@@ -1,0 +1,17 @@
+{
+  "name": "maragatham-chat-backend",
+  "version": "1.0.0",
+  "description": "Secure backend proxy so the hospital chat widget can call the Anthropic API without exposing the API key in the browser.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.112.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "mysql2": "^3.23.1",
+    "node-fetch": "^2.7.0"
+  }
+}
