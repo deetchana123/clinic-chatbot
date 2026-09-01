@@ -31,3 +31,20 @@ Deploying (options)
 - GitHub Pages: Only for static sites; this repo includes a Node backend so GitHub Pages alone is not sufficient.
 
 If you want I can help create the remote repository (using `gh`) and push these changes for you — tell me whether you have the `gh` CLI installed and are authenticated, or paste your GitHub repo URL to use.
+
+Docker + GitHub Actions (example)
+
+ - **Build locally with Docker:**
+
+```bash
+docker build -t maragatham-chat-backend:local .
+docker run -p 3000:3000 maragatham-chat-backend:local
+# then open http://localhost:3000
+```
+
+- **Publish via GitHub Actions to Docker Hub:**
+
+1. Create two repository secrets: `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` (a Docker Hub access token).
+2. The included workflow at `.github/workflows/docker-publish.yml` builds and pushes an image tagged `DOCKERHUB_USERNAME/maragatham-chat-backend:latest` on each push to `main`.
+
+If you'd like a variant that pushes to GitHub Container Registry (ghcr.io) instead, tell me and I will create that workflow.
